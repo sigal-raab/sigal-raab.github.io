@@ -1,14 +1,14 @@
 
-<!DOCTYPE html><!-- Last Published: Fri Mar 27 2020 21:28:31 GMT+0000 (Coordinated Universal Time) -->
-<html data-wf-domain="peizhuoli.github.io" data-wf-page="5e6fb768456f961381500a5f" data-wf-site="51e0d73d83d06baa7a00000f">
+<!DOCTYPE html>
+<!--html data-wf-domain="sigal-raab.github.io" data-wf-page="5e6fb768456f961381500a5f" data-wf-site="51e0d73d83d06baa7a00000f"-->
 <head>
   <meta charset="utf-8"/>
-  <title>Neural Blend Shapes</title>
-  <meta content="A rigging framework that provides high-quality deformation." name="description"/>
-  <meta content="Learning Skeletal Articulations with Neural Blend Shapes" property="og:title"/>
-  <meta content="An end-to-end method for mesh character rigging" property="og:description"/>
+  <title>MoDi</title>
+   <meta content="Unconditional Motion Synthesis from Diverse Data" property="og:title"/>
+  <meta content="MoDi: Unconditional Motion Synthesis from Diverse Data" property="og:title"/>
+  <meta content="MoDi: Unconditional Motion Synthesis from Diverse Data" property="og:description"/>
   <meta content="summary" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <link href="./motion_editing.css" rel="stylesheet" type="text/css"/>
+  <link href="./definitions.css" rel="stylesheet" type="text/css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
   <script type="text/javascript">WebFont.load({  google: {    families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic","Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Ubuntu:300,300italic,400,400italic,500,500italic,700,700italic","Changa One:400,400italic","Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic","Varela Round:400","Bungee Shade:regular","Roboto:300,regular,500"]  }});</script>
   <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
@@ -23,161 +23,125 @@
 <body>
   <div class="section hero nerf-_v2">
     <div class="container-2 nerf_header_v2 w-container">
-      <h1 class="nerf_title_v2">Learning Skeletal Articulations with Neural Blend Shapes</h1>
-      <h1 class="nerf_subheader_v2">SIGGRAPH 2021</h1>
+      <h1 class="nerf_title_v2">MoDi: Unconditional Motion Synthesis from Diverse Data</h1>
+      <!--h1 class="nerf_subheader_v2">CONFERENCE NAME</h1-->
+
+      <!-- AUTHORS -->
+
       <div class="nerf_authors_list_single w-row">
+          <div class="w-col w-col-2 w-col-small-4 w-col-tiny-6"><a !--href="https://sigal-raab.github.io/"-- target="_blank" class="nerf_authors_v2">Sigal Raab</a></div>
+          <div class="w-col w-col-2 w-col-small-4 w-col-tiny-6"><a !--href="https://
+Inbal-leibovitch.github.io/"-- target="_blank" class="nerf_authors_v2">Inbal Leibovitch</a></div>
           <div class="w-col w-col-2 w-col-small-4 w-col-tiny-6"><a href="https://peizhuoli.github.io/" target="_blank" class="nerf_authors_v2">Peizhuo Li</a></div>
           <div class="w-col w-col-2 w-col-small-4 w-col-tiny-6"><a href="https://kfiraberman.github.io/" target="_blank" class="nerf_authors_v2">Kfir Aberman</a></div>
-          <div class="w-col w-col-2 w-col-small-4 w-col-tiny-6"><a href="https://www.cs.tau.ac.il/~hanocka/" target="_blank" class="nerf_authors_v2">Rana Hanocka</a></div>
-          <div class="w-col w-col-2 w-col-small-4 w-col-tiny-6"><a href="http://libliu.info" target="_blank" class="nerf_authors_v2">Libin Liu</a></div>
           <div class="w-col w-col-2 w-col-small-4 w-col-tiny-6"><a href="https://igl.ethz.ch/people/sorkine/" target="_blank" class="nerf_authors_v2">Olga Sorkine-Hornung</a></div>
-          <div class="w-col w-col-2 w-col-small-4 w-col-tiny-6"><a href="https://cfcs.pku.edu.cn/baoquan" target="_blank" class="nerf_authors_v2">Baoquan Chen</a></div>
-        </div>
-          <!-- <div class="columns-6 w-row"><div class="nerf_mobile_col_inst w-col w-col-4 w-col-small-4 w-col-tiny-4">
-            <div class="nerf_mobile_inst"><span class="text-span_nerf">1 </span>Beijing </div></div>
-            <div class="nerf_mobile_col_inst w-col w-col-4 w-col-small-4 w-col-tiny-4"><div class="nerf_mobile_inst"><span class="text-span_nerf">2</span>Peking University</div></div>
-            <div class="nerf_mobile_col_inst w-col w-col-4 w-col-small-4 w-col-tiny-4"><div class="nerf_mobile_inst"><span class="text-span_nerf">3</span>Hebrew University</div></div>
-            <div class="nerf_mobile_col_inst w-col w-col-4 w-col-small-4 w-col-tiny-4"><div class="nerf_mobile_inst"><span class="text-span_nerf">4</span>ETH Zurich</div></div>
-            <div class="nerf_mobile_col_inst w-col w-col-4 w-col-small-4 w-col-tiny-4"><div class="nerf_mobile_inst"><span class="text-span_nerf">5</span>Tel-Aviv University</div></div>
-          </div>
-            <div class="nerf_authors_list_single nerf_authors_affiliation w-row">
-              <div class="w-col w-col-2"><h1 class="nerf_affiliation_v2">Beijing Film Academy</h1></div>
-              <div class="column w-col w-col-2"><h1 class="nerf_affiliation_v2">Peking University</h1></div>
-              <div class="w-col w-col-2"><h1 class="nerf_affiliation_v2">Hebrew University</h1></div>
-              <div class="w-col w-col-2"><h1 class="nerf_affiliation_v2">ETH Zurich</h1></div>
-              <div class="w-col w-col-2"><h1 class="nerf_affiliation_v2">Tel-Aviv University</h1></div>
-              <div class="w-col w-col-2"><h1 class="nerf_affiliation_v2">Peking University</h1></div>
-            </div> -->
-              <!-- <div class="div-block-10"><div class="nerf_equal_v2"><span class="text-span_nerf">*</span><span class="text-span_nerf_star">*</span>Denotes Equal Contribution</div></div> -->
-              <!-- <img src="./images/teaser.png" alt=""/> -->
-                <div>
-                  <span class="center"><img src="images/video_teaser.gif"></span>
-                  <!-- <div class="w-col w-col-4"><a class="examples_header">Input</a></div>
-                  <div class="w-col w-col-4"><a class="examples_header">Output 1</a></div>
-                  <div class="w-col w-col-4"><a class="examples_header">Output 2</a></div> -->
-                </div>
-              <div class="link_column_nerf_v2 w-row">
-                <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4">
-                  <a href="./papers/neural-blend-shapes-camera-ready.pdf" target="_blank" class="link-block w-inline-block">
-                    <img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01.png" alt="paper" class="paper_img image-8 github_icon_nerf_v2"/></a>
-                <!-- <img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01.png" alt="paper" srcset="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01-p-500.png 500w, https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01.png 672w" sizes="(max-width: 479px) 12vw, (max-width: 767px) 7vw, (max-width: 991px) 41.84375px, 56.6875px" class="paper_img image-8_nerf"/></a> -->
-              </div>
-              <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4">
-                <a href="https://github.com/PeizhuoLi/neural-blend-shapes" target="_blank" class="link-block w-inline-block">
-                <img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cae3b53b42ebb3dd4175a82_68747470733a2f2f7777772e69636f6e66696e6465722e636f6d2f646174612f69636f6e732f6f637469636f6e732f313032342f6d61726b2d6769746875622d3235362e706e67.png" alt="paper" class="paper_img image-8 github_icon_nerf_v2"/></a>
-              </div>
-                <div class="column-2 w-col w-col-4 w-col-small-4 w-col-tiny-4"><a href="https://drive.google.com/file/d/1S_JQY2N4qx1V6micWiIiNkHercs557rG/view?usp=sharing" target="_blank" class="link-block w-inline-block">
-                  <img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5e7136849ee3b0a0c6a95151_database.svg" alt="paper" class="paper_img image-8_nerf nerf_db_icon"/></a>
-                </div>
-              </div>
-                  <div class="paper_code_nerf w-row">
-                    <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4">
-                      <div class="text-block-2"><strong class="bold-text-nerf_v2">Paper</strong></div>
-                    </div>
-                      <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4"><div class="text-block-2">
-                        <strong class="bold-text-nerf_v2">Code</strong></div>
-                      </div>
-                        <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4">
-                          <div class="text-block-2"><strong class="bold-text-nerf_v2">Model</strong></div>
-                        </div>
-                      </div>
-                          <div class="nerf_slide_nav w-slider-nav w-slider-nav-invert w-round"></div></div></div>
+          <div class="w-col w-col-2 w-col-small-4 w-col-tiny-6"><a href="https://danielcohenor.com/" target="_blank" class="nerf_authors_v2">Daniel Cohen-Or</a></div>
+</div>
+<div>
+<span class="center"><img src="images/video_teaser.gif"></span>
+<!-- <div class="w-col w-col-4"><a class="examples_header">Input</a></div>
+<div class="w-col w-col-4"><a class="examples_header">Output 1</a></div>
+<div class="w-col w-col-4"><a class="examples_header">Output 2</a></div> -->
+</div>
+<div class="link_column_nerf_v2 w-row">
+<div class="w-col w-col-4 w-col-small-4 w-col-tiny-4">
+<a href="./papers/MoDi.pdf" target="_blank" class="link-block w-inline-block">
+<img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01.png" alt="paper" class="paper_img image-8 github_icon_nerf_v2"/></a>
+</div>
+<div class="w-col w-col-4 w-col-small-4 w-col-tiny-4">
+<a href="https://github.com/sigal-raab/MoDi" target="_blank" class="link-block w-inline-block">
+<img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cae3b53b42ebb3dd4175a82_68747470733a2f2f7777772e69636f6e66696e6465722e636f6d2f646174612f69636f6e732f6f637469636f6e732f313032342f6d61726b2d6769746875622d3235362e706e67.png" alt="paper" class="paper_img image-8 github_icon_nerf_v2"/></a>
+</div>
+<div class="column-2 w-col w-col-4 w-col-small-4 w-col-tiny-4"><a href="https://github.com/sigal-raab/MoDi" target="_blank" class="link-block w-inline-block">
+<img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5e7136849ee3b0a0c6a95151_database.svg" alt="paper" class="paper_img image-8_nerf nerf_db_icon"/></a>
+</div>
+</div>
+<div class="paper_code_nerf w-row">
+  <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4">
+    <div class="text-block-2"><strong class="bold-text-nerf_v2">Paper</strong></div>
+  </div>
+  <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4"><div class="text-block-2">
+    <strong class="bold-text-nerf_v2">Code</strong></div>
+  </div>
+  <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4">
+    <div class="text-block-2"><strong class="bold-text-nerf_v2">Model</strong></div>
+  </div>
+</div>
+<div class="nerf_slide_nav w-slider-nav w-slider-nav-invert w-round"></div></div></div>
 
-                          <div data-anchor="slide1" class="section nerf_section">
-                            <div class="w-container"><h2 class="grey-heading_nerf">Overview Video</h2>
-                              <div style="padding-top:56.17021276595745%" id="w-node-e5e45b1d55ac-81500a5f" class="w-embed-youtubevideo stega_movie youtube">
-                                <iframe src="https://www.youtube.com/embed/antc20EFh6k?rel=1&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=0" frameBorder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-                              </div>
-                              <!-- <p class="paragraph-3 nerf_text">Coming soon...</p> -->
-                            </div>
-                            </div>
-                            <div data-anchor="slide1" class="section nerf_section">
-                              <div class="grey_container w-container">
-                                <h2 class="grey-heading_nerf">Abstract &amp; Method</h2>
-                                <p class="paragraph-3 nerf_text">We develop a neural technique for articulating 3D characters using enveloping with a pre-defined skeletal structure, which is essential for animating a character with motion capture (mocap) data. Furthermore, we propose <i>neural blend shapes</i> — a set of corrective pose-dependent shapes that are used to address notorious artifacts caused by standard rigging and skinning technique in the joint regions.</p>
-                                <span class="center">
-                                <img src="./images/overview.png" class="overview_figure"/>
-                                </span>
+<div data-anchor="slide1" class="section nerf_section">
+  <div class="w-container"><h2 class="grey-heading_nerf">Overview Video</h2>
+    <div style="padding-top:56.17021276595745%" id="w-node-e5e45b1d55ac-81500a5f" class="w-embed-youtubevideo stega_movie youtube">
+      <!--iframe width="560" height="315" src="https://www.youtube.com/embed/7gPbBi-bbu4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe-->
+      <iframe src="https://www.youtube.com/embed/7gPbBi-bbu4?rel=1&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=0" frameBorder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+    </div>
+    <!-- <p class="paragraph-3 nerf_text">Coming soon...</p> -->
+  </div>
+</div>
 
-                                <p class="paragraph-3 nerf_text">Starting with a character model in T-pose, and the joint rotations on the desired skeleton hierarchy, our envelope branch predicts the 
-                                  corresponding skinning and rigging parameters and deforms the input character using a differential enveloping. In parallel, a residual deformation branch uses the input mesh to predict blend shapes and uses the joint rotations to predict the corresponding blending coefficients. This design also enables the network to be trained by only observing deformed shapes using <i>indirect supervision</i>, with no assumption on the underlying deformation model.</p>
-                                <span class="center">                                
-                                <img src="./images/method.png" class="overview_figure"/>
-                                </span>
-                            
+<!-- Abstract and Method -->
 
-                            <p class="paragraph-3 nerf_text">Our network is built upon the MeshCNN operators of Hanocka et al. [2019] and the Skeleton-Aware operators of Aberman et al. [2020], which enables generation of high-quality deformations for arbitrary mesh connectivities.
-                            </p>
+<div data-anchor="slide1" class="section nerf_section">
+  <div class="grey_container w-container">
+    <h2 class="grey-heading_nerf">Abstract and Method</h2>
+    <p class="paragraph-3 nerf_text">The emergence of neural networks has revolutionized the field of motion synthesis. Yet, learning to unconditionally synthesize motions from a given distribution remains a challenging task, especially when the motions are highly diverse. We present MoDi, an unconditional generative model that synthesizes diverse motions. Our model is trained in a completely unsupervised setting from a diverse, unstructured and unlabeled motion dataset and yields a well-behaved, highly semantic latent space. The design of our model follows the prolific architecture of StyleGAN and adapts two of its key technical components into the motion domain: a set of style-codes injected into each level of the generator hierarchy and a mapping function that learns and forms a disentangled latent space. We show that despite the lack of any structure in the dataset, the latent space can be semantically clustered, and facilitates semantic editing and motion interpolation. In addition, we propose a technique to invert unseen motions into the latent space, and demonstrate latent-based motion editing operations that otherwise cannot be achieved by naive manipulation of explicit motion representations. Our qualitative and quantitative experiments show that our framework achieves state-of-the-art synthesis quality that can follow the distribution of highly diverse motion datasets.</p>
+    <span class="center">
+    <img src="./images/overview.png" class="overview_figure"/>
+    </span>
 
-                              <div class="center">
-                                <span class="center">
-                                  <img class="special_characters" src="images/envelop.png">
-                                  <img class="special_characters" src="images/residual.png">
-                                </span>
-                                <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6"><a class="examples_header">Envelope Branch</a></div>
-                                <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6"><a class="examples_header">Residual Branch</a></div>
-                              </div>
+    <p class="paragraph-3 nerf_text">Our design is inspired by the powerful architecture of StyleGAN [Karras et al. 2019], which has been shown to learn a disentangled latent space and allows incredible editing capabilities. 
+    However, there is a significant domain gap between images and motion data. Images possess a regularized spatial structure, while motion data is an irregular one, which consists of a skeletal graph axis, and a temporal one.
+    Unlike StyleGAN, which consists of a hierarchy of convolutional layers applied on a spatial domain, here we apply the convolutions on time-vertex layers, using skeleton-aware operators [Aberman et al. 2020a], and the network generates a temporal sequence of poses rather than a single image.</p>
+    <span class="center">                                
+    <img src="./images/method.png" class="overview_figure"/>
+    </span>
+  </div>
+</div>
 
+<div class="white_section_nerf">
+  <div class="w-container">
+  <h2 class="grey-heading_nerf">Semantic Clustering</h2>
+  <p class="paragraph-3 nerf_text nerf_results_text">MoDi is designed to learn highly diverse datasets, whose data is unstructured and cannot be semantically clustered using common attributes. In the following figure we observe the latent space , split into 8 clusters using K-means. Latent space values belong to 10,000 randomly synthesized motions. We randomly choose several motions from each cluster and depict them. As one can see, motions represented by different clusters are semantically different, and motions that belong to the same cluster, are semantically similar.</p>
+  <span class="center">
+    <img class="skin_result" src="images/k_means_latent.png">
+  </span>
 </div></div>
 
 <div class="white_section_nerf">
   <div class="w-container">
-  <h2 class="grey-heading_nerf">Rigging &amp; Skinning</h2>
-  <p class="paragraph-3 nerf_text nerf_results_text">Our method can predict accurate skinning weights and skeleton rigs for unseen characters:</p>
+  <h2 class="grey-heading_nerf">Latent Interpolation</h2>
+  <p class="paragraph-3 nerf_text nerf_results_text">We demonstrate the linearity of the latent space by interpolating
+between the latent values and observing the motions generated out of the interpolation stages.</p>
   <span class="center">
-    <img class="skin_result" src="images/skinning.png">
+    <img class="skin_result" src="images/interp.gif">
   </span>
-  <p class="paragraph-3 nerf_text nerf_results_text">Specifically, our model outputs a skeleton complying with the target skeletal hierarchy, which is important for exploiting existing mocap data. RigNet [2020] only provides limited user control and is not able to reach the desired skeletal hierarchy.</p>
-  <div class="center">
-    <span class="center">
-      <img src="images/rignet_cmp.png" class="rig_comparison">
-    </span>
-    <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3"><a class="examples_header">RigNet (12)</a></div>
-    <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3"><a class="examples_header">RigNet (25)</a></div>
-    <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3"><a class="examples_header">RigNet (50)</a></div>
-    <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3"><a class="examples_header">Ours</a></div>
-  </div>
 </div></div>
 
 <div class="white_section_nerf">
-  <div class="grey_container w-container">
-  <h2 class="grey-heading_nerf">High-Quality Deformation</h2>
-  <p class="paragraph-3 nerf_text nerf_results_text">Since our model is trained using high-quality deformations, the envelope branch outperforms the baseline LBS technique. Further boosted by the neural blend shapes, our method can generate favorable deformations in the joint region:</p>
-  <span class="center"><img src="images/deformation.gif"></span>
-  <p class="paragraph-3 nerf_text nerf_results_text">And even capture subtle soft tissue movements:</p>
-  <span class="center"><img src="images/video_teaser.gif"></span>
+  <div class="w-container">
+  <h2 class="grey-heading_nerf">Editing in the Latent Space</h2>
+  <p class="paragraph-3 nerf_text nerf_results_text">A disentangled latent space contains direction vectors that consistently correspond to individual factors of variation. While editing in such a direction, the motion should remain intact except for the edited attribute. In the following figure we observe motions generated from latent values, which reside on a vector that affects the <i>raising of the right hand</i>.</p>
+  <span class="center">
+    <img class="skin_result" src="images/edit.gif">
+  </span>
 </div></div>
 
-<div data-anchor="slide1" class="section nerf_section">
-  <div class="w-container"><h2 class="grey-heading_nerf">Presentation at SIGGRAPH</h2>
-    <div style="padding-top:56.17021276595745%" id="w-node-e5e45b1d55ac-81500a5f" class="w-embed-youtubevideo stega_movie youtube">
-      <iframe src="https://www.youtube.com/embed/20yEPdqbSes?rel=1&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=0" frameBorder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-    </div>
-    <!-- <p class="paragraph-3 nerf_text">Coming soon...</p> -->
-  </div>
-  </div>
+
+<!-- BibTeX -->
 
 <div class="white_section_nerf">
   <div class="w-container">
   <h2 class="grey-heading_nerf">BibTeX</h2>
   <div class="grey_container w-container">
     <div class="bibtex">
-          <pre><code>@article{li2021learning,
-  author = {Li, Peizhuo and Aberman, Kfir and Hanocka, Rana and Liu, Libin and Sorkine-Hornung, Olga and Chen, Baoquan},
-  title = {Learning Skeletal Articulations with Neural Blend Shapes},
-  journal = {ACM Transactions on Graphics (TOG)},
-  volume = {40},
-  number = {4},
-  pages = {1},
-  year = {2021},
-  publisher = {ACM}
-}</code></pre>
-      </div>
+      <pre><code>@article{raab2022modi,
+        author = {Raab, Sigal and Leibovitch, Inbal and Li, Peizhuo and Aberman, Kfir and Sorkine-Hornung, Olga and Cohen-Or, Daniel},
+        title = {MoDi: Unconditional Motion Synthesis from Diverse Data},
+      }
+      </code></pre>
     </div>
-    </div>
-    </div>
-
-
-
+  </div>
+</div>
+</div>
 
 <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=51e0d73d83d06baa7a00000f" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><script src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/js/webflow.3057c11af.js" type="text/javascript"></script><!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]--></body></html>
