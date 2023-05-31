@@ -1,0 +1,190 @@
+@global-macros {
+    menuspace: &nbsp; &nbsp; &nbsp;
+}
+
+/* set page style */
+@media screen
+{
+  html
+  {
+    background-color: #3b95b9;
+  }
+  body
+  {
+    font-size: 12pt;
+    width: 70%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 5%;
+    padding-left: 5%;
+    min-height: 100%;
+    border-left: 1px solid #888; /* boarder line width and color */
+    border-right: 1px solid #888;
+    position: relative;
+  }
+}
+
+/* set style */
+body
+{
+    background-color: #fff;
+    font-family: "Linux Biolinum";
+    margin:0px auto;
+    text-align: justify;
+    top: 20px;
+    font-size: 110%;
+}
+
+h1{
+    color: #000000;
+    font-family: "header_font";
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    font-size: 175%;
+}
+
+code {
+    border-radius: 10px;
+    font-family: "Linux Biolinum";
+    text-align: middle;
+    border: 2px solid #C0C0C0;
+    padding: 0.2em 0.2em;
+    line-height: 2;
+    font-size: 90%;
+}
+
+.container {
+  }
+  .container__image {
+    display: inline-block;
+    vertical-align: top;
+    width: 10%;
+    margin: 0px 0px 0px 30px;
+  }
+  .container__text {
+    display: inline-block;
+    width: 71%;
+  }
+  @media (max-width: 620px) {
+    .container__text {
+      width: 100%;
+    }
+}
+
+.paper {
+}
+.paper_image {
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+  margin: 0px 30px 0px 0;
+}
+.paper_text {
+  display: inline-block;
+  width: 76%;
+  font-size: 100%;
+  line-height: 1.3;
+  letter-spacing: 0em;
+}
+@media (max-width: 620px) {
+  .container__text {
+    width: 100%;
+  }
+}
+
+a /* hyper link text style */
+{
+  text-decoration: none;
+  color: #6A9AAD;
+}
+
+/* set block style */
+#menu
+{
+  font-family: 'menu_font';
+  background-color: #333333;
+  color: #333333;
+  position: fixed;
+  left: 0px; /* left margin of entire page */
+  top: 0%; /* top margin of entire page*/
+  padding-left: 11%; /* padding of the word */
+  width: 100%;
+  line-height:  5px; /* height of manu bar */
+  border-bottom: #999999 solid 1px;
+}
+
+#menu a /* hyper link text style in menu bar */
+{
+  text-decoration: none;
+  color: #fff;
+}
+
+/* pre define font */
+@font-face {
+    font-family: 'Linux Libertine'; /* normal */
+    src: url('./fonts/LinLibertine_R.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Linux Libertine'; /* italic */
+    src: url('./fonts/LinLibertine_RI.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Linux Libertine'; /* bold */
+    src: url('./fonts/LinLibertine_RB.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Linux Biolinum'; /* normal */
+    src: url('./fonts/LinBiolinum_R.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Linux Biolinum'; /* italic */
+    src: url('./fonts/LinBiolinum_RI.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Linux Biolinum'; /* bold */
+    src: url('./fonts/LinBiolinum_RB.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'header_font'; /* font for header 1 */
+    src: url('./fonts/LinBiolinum_aS.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'menu_font'; /* font for header 1 */
+    src: url('./fonts/LinBiolinum_aS.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*These styles apply from zero to below px wide screen only.*/
+
+@media only screen and (max-width:  620px){
+  .container__image{
+    display: inline-block;
+    vertical-align: top;
+    width: 80%;
+    margin-top: 20px;
+  }
+
+
+  .paper_image {
+    display: inline-block;
+    vertical-align: top;
+    width: 80%;
+    margin: 0px 20px 0 0;
+  }
+}
