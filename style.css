@@ -59,12 +59,12 @@ code {
   .container__image {
     display: inline-block;
     vertical-align: top;
-    width: 15%;
-    margin: 0px 90px 0px 0px;
+    width: 20%;
+    margin: 0px 30px 0px 0px;
   }
   .container__text {
     display: inline-block;
-    width: 71%;
+    width: 60%;
   }
   @media (max-width: 620px) {
     .container__text {
