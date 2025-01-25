@@ -64,7 +64,7 @@ code {
   }
   .container__text {
     display: inline-block;
-    width: 60%;
+    width: 76%;
   }
   @media (max-width: 620px) {
     .container__text {
